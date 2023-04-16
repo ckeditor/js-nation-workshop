@@ -15,5 +15,3 @@ cp "tsconfig.json" "vite.config.js" ./meta/${dir}
 cp "index.html" ./meta/${dir}
 
 cp -r "src" ./meta/${dir}
-
-

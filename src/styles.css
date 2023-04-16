@@ -1,0 +1,45 @@
+body {
+  max-width: 800px;
+  margin: 20px auto;
+}
+.ck.ck-editor {
+  margin: 1.5em 0 !important;
+}
+#autosave {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ck-color-toolbar-background);
+  border: 1px solid var(--ck-color-toolbar-border);
+  padding: 10px;
+  border-radius: var(--ck-border-radius);
+  margin-top: -1.5em;
+  margin-bottom: 1.5em;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#autosave-status {
+  display: flex;
+  align-items: center;
+}
+#autosave-status_label {
+  font-weight: bold;
+  margin-right: var(--ck-spacing-medium);
+}
+#autosave-status_spinner {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#autosave-status_spinner-label {
+  position: relative;
+}
+#autosave-status_spinner-label::after {
+  content: "Saved!";
+  color: green;
+  display: inline-block;
+  margin-right: var(--ck-spacing-medium);
+}
+#autosave-status_spinner-loader {
+}
