@@ -5,6 +5,7 @@ body {
 .ck.ck-editor {
   margin: 1.5em 0 !important;
 }
+
 #autosave {
   display: flex;
   justify-content: space-between;
@@ -19,14 +20,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-#autosave-status {
-  display: flex;
-  align-items: center;
-}
-#autosave-status_label {
-  font-weight: bold;
-  margin-right: var(--ck-spacing-medium);
-}
+
 #autosave-status_spinner {
   display: flex;
   align-items: center;
@@ -35,11 +29,49 @@ body {
 #autosave-status_spinner-label {
   position: relative;
 }
+
 #autosave-status_spinner-label::after {
   content: "Saved!";
   color: green;
   display: inline-block;
   margin-right: var(--ck-spacing-medium);
 }
-#autosave-status_spinner-loader {
+
+/* During "Saving" display spinner and change content of label. */
+#autosave-status.busy #autosave-status_spinner-label::after {
+  content: "Saving...";
+  color: red;
+}
+
+#autosave-status.busy #autosave-status_spinner-loader {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border-top: 3px solid hsl(0, 0%, 70%);
+  border-right: 2px solid transparent;
+  animation: autosave-status-spinner 1s linear infinite;
+}
+
+#autosave-status,
+#autosave-server {
+  display: flex;
+  align-items: center;
+}
+
+#autosave-server_label,
+#autosave-status_label {
+  font-weight: bold;
+  margin-right: var(--ck-spacing-medium);
+}
+
+#autosave + .ck.ck-editor .ck-editor__editable {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@keyframes autosave-status-spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
