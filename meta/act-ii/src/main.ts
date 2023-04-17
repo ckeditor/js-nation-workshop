@@ -70,7 +70,7 @@ ClassicEditor.create(editorElement, {
   autosave: {
     waitingTime: 500,
     save: (editor) => {
-      saveData(editor.getData());
+      return saveData(editor.data.get());
     },
   },
 }).then((editor) => {
