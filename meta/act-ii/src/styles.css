@@ -97,7 +97,7 @@ body {
 
 #sidebar {
   /* Set some size and spacing for the sidebar (can be any size). */
-  min-width: 150px;
+  min-width: 200px;
   padding: 0 10px;
   overflow: hidden; /* Hide annotations moved above top sidebar border. */
 }
