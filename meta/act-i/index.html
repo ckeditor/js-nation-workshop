@@ -14,22 +14,26 @@
   <body>
     <h1>CKEditor 5 – Development Sample</h1>
 
-    <!-- editor will be here -->
-    <div id="editor"></div>
-    <!-- maybe this will be useful later -->
-    <!-- <div id="autosave"> -->
-    <!--   <div id="autosave-status"> -->
-    <!--     <div id="autosave-status_label">Status:</div> -->
-    <!--     <div id="autosave-status_spinner"> -->
-    <!--       <span id="autosave-status_spinner-label"></span> -->
-    <!--       <span id="autosave-status_spinner-loader"></span> -->
-    <!--     </div> -->
-    <!--   </div> -->
-    <!-- </div> -->
+    <div class="container">
+      <!-- editor will be here -->
+      <div id="editor"></div>
+      <!-- maybe this will be useful later -->
+      <div class="sidebar" id="sidebar"></div>
+    </div>
+    <div id="autosave">
+      <div id="autosave-status">
+        <div id="autosave-status_label">Status:</div>
+        <div id="autosave-status_spinner">
+          <span id="autosave-status_spinner-label"></span>
+          <span id="autosave-status_spinner-loader"></span>
+        </div>
+      </div>
+    </div>
 
     <!-- add space for scrolling -->
     <div style="height: 1000px"></div>
 
+    <script src="https://cdn.ckbox.io/ckbox/latest/ckbox.js"></script>
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
