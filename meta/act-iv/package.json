@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "reset": "./meta/scripts/reset.sh"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-autoformat": "^37.1.0",
