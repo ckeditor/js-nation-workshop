@@ -2,6 +2,9 @@
 
 set -e
 
+stage=$1
+
+echo "Removing files..."
 rm -rf \
 "node_modules" \
 ".eslintrc.cjs" \
@@ -12,14 +15,16 @@ rm -rf \
 "tsconfig.json" \
 "vite.config.js"
 
+echo "Copying files from ${stage}..."
 cp -r \
-"./meta/start/.eslintrc.cjs" \
-"./meta/start/index.html" \
-"./meta/start/package-lock.json" \
-"./meta/start/package.json" \
-"./meta/start/src" \
-"./meta/start/tsconfig.json" \
-"./meta/start/vite.config.js" \
+"./meta/${stage}/.eslintrc.cjs" \
+"./meta/${stage}/index.html" \
+"./meta/${stage}/package-lock.json" \
+"./meta/${stage}/package.json" \
+"./meta/${stage}/src" \
+"./meta/${stage}/tsconfig.json" \
+"./meta/${stage}/vite.config.js" \
 .
 
+echo "Installing dependencies..."
 npm install
