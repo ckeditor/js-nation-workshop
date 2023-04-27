@@ -1,5 +1,5 @@
 import "./styles.css";
-import "./balloon.css"
+import "./balloon.css";
 import { Autoformat } from "@ckeditor/ckeditor5-autoformat";
 import {
   Bold,
@@ -101,7 +101,7 @@ BalloonEditor.create(editorElement, {
   autosave: {
     waitingTime: 500,
     save: (editor) => {
-      return saveData(editor.data.get());
+      return saveData(editor as BalloonEditor);
     },
   },
   table: {
@@ -121,10 +121,10 @@ BalloonEditor.create(editorElement, {
   displayStatus(editor);
 });
 
-function saveData(data: string) {
+function saveData(editor: BalloonEditor) {
   return new Promise<void>((resolve) => {
     setTimeout(() => {
-      console.log("Saved!", data);
+      console.log("Saved!", editor.getData());
       resolve();
     }, 500);
   });

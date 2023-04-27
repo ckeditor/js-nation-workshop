@@ -97,7 +97,7 @@ ClassicEditor.create(editorElement, {
   autosave: {
     waitingTime: 500,
     save: (editor) => {
-      return saveData(editor.data.get());
+      return saveData(editor as ClassicEditor);
     },
   },
   table: {
@@ -113,10 +113,10 @@ ClassicEditor.create(editorElement, {
   displayStatus(editor);
 });
 
-function saveData(data: string) {
+function saveData(editor: ClassicEditor) {
   return new Promise<void>((resolve) => {
     setTimeout(() => {
-      console.log("Saved!", data);
+      console.log("Saved!", editor.getData());
       resolve();
     }, 500);
   });

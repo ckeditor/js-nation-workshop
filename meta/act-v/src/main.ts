@@ -115,7 +115,7 @@ BalloonEditor.create(editorElement, {
   autosave: {
     waitingTime: 500,
     save: (editor) => {
-      return saveData(editor);
+      return saveData(editor as BalloonEditor);
     },
   },
   table: {
