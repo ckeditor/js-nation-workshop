@@ -1,3 +1,15 @@
 .DS_Store
+*.swp
+
+# ignore on all levels
 node_modules/
 token.ts
+
+# ignore project files in root dir
+./.eslintrc.cjs
+./index.html
+./package-lock.json
+./package.json
+./src
+./tsconfig.json
+./vite.config.js
