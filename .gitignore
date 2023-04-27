@@ -5,11 +5,11 @@
 node_modules/
 token.ts
 
-# ignore project files in root dir
+# ignore project files in the root dir
 ./.eslintrc.cjs
 ./index.html
 ./package-lock.json
 ./package.json
-./src
+./src/
 ./tsconfig.json
 ./vite.config.js
