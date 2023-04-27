@@ -9,6 +9,7 @@ export default defineConfig({
     esbuildOptions: {
       legalComments: "none",
     },
+    entries: "./index.html"
   },
   plugins: [
     ckeditor5({ theme: require.resolve("@ckeditor/ckeditor5-theme-lark") }),
