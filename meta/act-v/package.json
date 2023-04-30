@@ -27,9 +27,7 @@
     "@ckeditor/ckeditor5-real-time-collaboration": "^37.1.0",
     "@ckeditor/ckeditor5-table": "^37.1.0",
     "@ckeditor/ckeditor5-theme-lark": "^37.1.0",
-    "@ckeditor/ckeditor5-ui": "^37.1.0",
-    "@ckeditor/ckeditor5-undo": "^37.1.0",
-    "@ckeditor/ckeditor5-watchdog": "^37.1.0"
+    "@ckeditor/ckeditor5-ui": "^37.1.0"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-inspector": "^4.1.0",

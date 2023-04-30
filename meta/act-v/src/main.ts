@@ -12,7 +12,6 @@ import { Heading, Title } from "@ckeditor/ckeditor5-heading";
 import { AutoLink, Link } from "@ckeditor/ckeditor5-link";
 import { DocumentList } from "@ckeditor/ckeditor5-list";
 import { Paragraph } from "@ckeditor/ckeditor5-paragraph";
-import { Undo } from "@ckeditor/ckeditor5-undo";
 import { Autosave } from "@ckeditor/ckeditor5-autosave";
 
 // @ts-ignore
@@ -70,7 +69,6 @@ BalloonEditor.create(editorElement, {
     Table,
     TableToolbar,
     Autosave,
-    Undo,
     Essentials,
     Bold,
     Italic,
