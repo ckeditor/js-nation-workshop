@@ -9,7 +9,7 @@ import {
 } from "@ckeditor/ckeditor5-basic-styles";
 import { Essentials } from "@ckeditor/ckeditor5-essentials";
 import { Heading, Title } from "@ckeditor/ckeditor5-heading";
-import { Link } from "@ckeditor/ckeditor5-link";
+import { AutoLink, Link } from "@ckeditor/ckeditor5-link";
 import { DocumentList } from "@ckeditor/ckeditor5-list";
 import { Paragraph } from "@ckeditor/ckeditor5-paragraph";
 import { Undo } from "@ckeditor/ckeditor5-undo";
@@ -80,6 +80,7 @@ BalloonEditor.create(editorElement, {
     Paragraph,
     Heading,
     Link,
+    AutoLink,
     DocumentList,
     BlockToolbar,
   ],

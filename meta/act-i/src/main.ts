@@ -8,7 +8,7 @@ import {
 import { ClassicEditor } from "@ckeditor/ckeditor5-editor-classic";
 import { Essentials } from "@ckeditor/ckeditor5-essentials";
 import { Heading } from "@ckeditor/ckeditor5-heading";
-import { Link } from "@ckeditor/ckeditor5-link";
+import { AutoLink, Link } from "@ckeditor/ckeditor5-link";
 import { DocumentList } from "@ckeditor/ckeditor5-list";
 import { Paragraph } from "@ckeditor/ckeditor5-paragraph";
 
@@ -29,6 +29,7 @@ ClassicEditor.create(editorElement, {
     Paragraph,
     Heading,
     Link,
+    AutoLink,
     DocumentList,
   ],
   toolbar: {
