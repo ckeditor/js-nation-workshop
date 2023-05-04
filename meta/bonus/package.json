@@ -1,0 +1,44 @@
+{
+  "name": "ckeditor5-vite-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "reset": "./meta/scripts/reset.sh"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-autoformat": "^37.1.0",
+    "@ckeditor/ckeditor5-autosave": "^37.1.0",
+    "@ckeditor/ckeditor5-basic-styles": "^37.1.0",
+    "@ckeditor/ckeditor5-ckbox": "^37.1.0",
+    "@ckeditor/ckeditor5-cloud-services": "^37.1.0",
+    "@ckeditor/ckeditor5-comments": "^37.1.0",
+    "@ckeditor/ckeditor5-editor-balloon": "^37.1.0",
+    "@ckeditor/ckeditor5-editor-classic": "^37.1.0",
+    "@ckeditor/ckeditor5-essentials": "^37.1.0",
+    "@ckeditor/ckeditor5-heading": "^37.1.0",
+    "@ckeditor/ckeditor5-image": "^37.1.0",
+    "@ckeditor/ckeditor5-link": "^37.1.0",
+    "@ckeditor/ckeditor5-list": "^37.1.0",
+    "@ckeditor/ckeditor5-mention": "^37.1.0",
+    "@ckeditor/ckeditor5-paragraph": "^37.1.0",
+    "@ckeditor/ckeditor5-real-time-collaboration": "^37.1.0",
+    "@ckeditor/ckeditor5-slash-command": "^37.1.0",
+    "@ckeditor/ckeditor5-table": "^37.1.0",
+    "@ckeditor/ckeditor5-theme-lark": "^37.1.0",
+    "@ckeditor/ckeditor5-ui": "^37.1.0"
+  },
+  "devDependencies": {
+    "@ckeditor/ckeditor5-inspector": "^4.1.0",
+    "@ckeditor/vite-plugin-ckeditor5": "^0.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
+    "prettier": "2.8.8",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.0"
+  }
+}
