@@ -3,6 +3,23 @@
 set -e
 
 stage=$1
+stages=(start act-i act-ii act-iii act-iv act-v)
+
+
+if [ -z "$stage" ]
+then
+  stage="start"
+fi
+
+if [[ " ${stages[@]} " =~ " ${stage} " ]]
+then
+  echo "Resetting to $stage stage..."
+else
+  echo "No stage: $stage"
+  exit 1
+fi
+
+
 
 echo "Removing files..."
 rm -rf \
@@ -13,7 +30,7 @@ rm -rf \
 "package.json" \
 "src" \
 "tsconfig.json" \
-"vite.config.js"
+"vite.config.js" 2> /dev/null
 
 echo "Copying files from ${stage}..."
 cp -r \
