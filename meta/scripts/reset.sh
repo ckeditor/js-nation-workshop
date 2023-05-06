@@ -3,8 +3,7 @@
 set -e
 
 stage=$1
-stages=(start act-i act-ii act-iii act-iv act-v)
-
+stages=(start act-i act-ii act-iii act-iv act-v bonus)
 
 if [ -z "$stage" ]
 then
@@ -15,16 +14,15 @@ if [[ " ${stages[@]} " =~ " ${stage} " ]]
 then
   echo "Resetting to $stage stage..."
 else
-  echo "No stage: $stage"
+  echo "No stage: $stage!"
   exit 1
 fi
-
-
 
 echo "Removing files..."
 rm -rf \
 "node_modules" \
 ".eslintrc.cjs" \
+".prettierrc.json" \
 "index.html" \
 "package-lock.json" \
 "package.json" \
@@ -35,6 +33,7 @@ rm -rf \
 echo "Copying files from ${stage}..."
 cp -r \
 "./meta/${stage}/.eslintrc.cjs" \
+"./meta/${stage}/.prettierrc.json" \
 "./meta/${stage}/index.html" \
 "./meta/${stage}/package-lock.json" \
 "./meta/${stage}/package.json" \
