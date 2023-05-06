@@ -7,6 +7,7 @@ token.ts
 
 # ignore project files in the root dir
 /.eslintrc.cjs
+/.prettierrc.json
 /index.html
 /package-lock.json
 /package.json
