@@ -37,6 +37,7 @@ import {
 import { Comments } from "@ckeditor/ckeditor5-comments";
 import {SlashCommand} from "@ckeditor/ckeditor5-slash-command";
 import {Mention} from "@ckeditor/ckeditor5-mention";
+import {JSONData} from "../plugins/jsonData.ts";
 
 declare global {
   interface Window {
@@ -86,6 +87,7 @@ BalloonEditor.create(editorElement, {
     AutoLink,
     DocumentList,
     BlockToolbar,
+    JSONData
   ],
   blockToolbar: {
     items: [
