@@ -99,5 +99,3 @@ function displayStatus(editor: ClassicEditor) {
     }
   });
 }
-
-export {};

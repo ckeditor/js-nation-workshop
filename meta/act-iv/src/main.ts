@@ -141,5 +141,3 @@ function displayStatus(editor: BalloonEditor) {
     }
   });
 }
-
-export {};

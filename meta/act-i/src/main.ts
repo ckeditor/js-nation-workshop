@@ -51,5 +51,3 @@ ClassicEditor.create(editorElement, {
     defaultProtocol: "https://",
   },
 });
-
-export {};
