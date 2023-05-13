@@ -12,6 +12,6 @@ I prepped some skeleton to get started.
 
 ## Meta
 
-To start working run the `./meta/scripts/reset.sh` (chmod it first if needed). It will setup the starting structure of the workshops. If you will need to jump to any stage, run the `npm run reset <stage>` command where stage one of `start / act-i / act-ii / act-iii / act-iv / act-v`.  
+To start working run the `./meta/scripts/reset.sh` (chmod it first if needed). It will setup the starting structure of the workshops. If you will need to jump to any stage, run the `npm run reset <stage>` command where stage one of `start / act-i / act-ii / act-iii / act-iv / act-v / bonus`.
 
 To start Vite and the dev server run `npm run dev`.
