@@ -139,18 +139,6 @@ BalloonEditor.create(editorElement, {
   },
 }).then((editor) => {
   window.editor = editor;
-  const annotationsUIs = editor.plugins.get("AnnotationsUIs");
-
-  annotationsUIs.deactivateAll();
-
-  annotationsUIs.activate(
-    "wideSidebar",
-    (annotation) => annotation.type === "comment"
-  );
-  annotationsUIs.activate(
-    "inline",
-    (annotation) => annotation.type !== "comment"
-  );
   CKEditorInspector.attach(editor);
   displayStatus(editor);
 });
