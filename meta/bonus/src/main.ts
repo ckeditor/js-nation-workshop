@@ -8,7 +8,7 @@ import {
   Underline,
 } from "@ckeditor/ckeditor5-basic-styles";
 import { Essentials } from "@ckeditor/ckeditor5-essentials";
-import { Heading, Title } from "@ckeditor/ckeditor5-heading";
+import { Heading } from "@ckeditor/ckeditor5-heading";
 import { AutoLink, Link } from "@ckeditor/ckeditor5-link";
 import { DocumentList } from "@ckeditor/ckeditor5-list";
 import { Paragraph } from "@ckeditor/ckeditor5-paragraph";
@@ -35,10 +35,13 @@ import {
   RealTimeCollaborativeEditing,
 } from "@ckeditor/ckeditor5-real-time-collaboration";
 import { Comments } from "@ckeditor/ckeditor5-comments";
-import {SlashCommand} from "@ckeditor/ckeditor5-slash-command";
-import {Mention} from "@ckeditor/ckeditor5-mention";
-import {JSONData} from "../plugins/jsonData.ts";
-import {DragDropBlockToolbar, DragDropExperimental} from "ckeditor5/src/clipboard.js";
+import { SlashCommand } from "@ckeditor/ckeditor5-slash-command";
+import { Mention } from "@ckeditor/ckeditor5-mention";
+import { JSONData } from "../plugins/jsonData.ts";
+import {
+  DragDropBlockToolbar,
+  DragDropExperimental,
+} from "ckeditor5/src/clipboard.js";
 
 declare global {
   interface Window {
@@ -65,7 +68,6 @@ BalloonEditor.create(editorElement, {
     RealTimeCollaborativeComments,
     RealTimeCollaborativeEditing,
     PresenceList,
-    Title,
     CKBox,
     CloudServices,
     PictureEditing,
@@ -90,7 +92,7 @@ BalloonEditor.create(editorElement, {
     BlockToolbar,
     DragDropExperimental,
     DragDropBlockToolbar,
-    JSONData
+    JSONData,
   ],
   blockToolbar: {
     items: [
@@ -115,7 +117,7 @@ BalloonEditor.create(editorElement, {
       "ckbox",
       "|",
       "comment",
-      "commentsArchive"
+      "commentsArchive",
     ],
   },
   link: {
@@ -133,9 +135,6 @@ BalloonEditor.create(editorElement, {
   },
   image: {
     toolbar: ["toggleImageCaption", "imageTextAlternative"],
-  },
-  title: {
-    placeholder: "Title",
   },
   placeholder: "Start writing...",
   collaboration: {

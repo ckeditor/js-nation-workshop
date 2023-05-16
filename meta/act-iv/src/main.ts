@@ -8,7 +8,7 @@ import {
   Underline,
 } from "@ckeditor/ckeditor5-basic-styles";
 import { Essentials } from "@ckeditor/ckeditor5-essentials";
-import { Heading, Title } from "@ckeditor/ckeditor5-heading";
+import { Heading } from "@ckeditor/ckeditor5-heading";
 import { AutoLink, Link } from "@ckeditor/ckeditor5-link";
 import { DocumentList } from "@ckeditor/ckeditor5-list";
 import { Paragraph } from "@ckeditor/ckeditor5-paragraph";
@@ -47,7 +47,6 @@ BalloonEditor.create(editorElement, {
     tokenUrl: tokenUrl,
   },
   plugins: [
-    Title,
     CKBox,
     CloudServices,
     PictureEditing,
@@ -109,9 +108,6 @@ BalloonEditor.create(editorElement, {
   },
   image: {
     toolbar: ["toggleImageCaption", "imageTextAlternative"],
-  },
-  title: {
-    placeholder: "Title",
   },
   placeholder: "Start writing...",
 }).then((editor) => {
