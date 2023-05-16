@@ -10,7 +10,7 @@
     "reset": "./meta/scripts/reset.sh"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-theme-lark": "^37.1.0"
+    "@ckeditor/ckeditor5-theme-lark": "38.0.0-rc.1"
   },
   "devDependencies": {
     "@ckeditor/vite-plugin-ckeditor5": "^0.1.1",

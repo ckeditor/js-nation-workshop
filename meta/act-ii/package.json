@@ -10,16 +10,16 @@
     "reset": "./meta/scripts/reset.sh"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-autoformat": "^37.1.0",
-    "@ckeditor/ckeditor5-autosave": "^37.1.0",
-    "@ckeditor/ckeditor5-basic-styles": "^37.1.0",
-    "@ckeditor/ckeditor5-editor-classic": "^37.1.0",
-    "@ckeditor/ckeditor5-essentials": "^37.1.0",
-    "@ckeditor/ckeditor5-heading": "^37.1.0",
-    "@ckeditor/ckeditor5-link": "^37.1.0",
-    "@ckeditor/ckeditor5-list": "^37.1.0",
-    "@ckeditor/ckeditor5-paragraph": "^37.1.0",
-    "@ckeditor/ckeditor5-theme-lark": "^37.1.0"
+    "@ckeditor/ckeditor5-autoformat": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-autosave": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-basic-styles": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-editor-classic": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-essentials": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-heading": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-link": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-list": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-paragraph": "38.0.0-rc.1",
+    "@ckeditor/ckeditor5-theme-lark": "38.0.0-rc.1"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-inspector": "^4.1.0",

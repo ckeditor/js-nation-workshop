@@ -6,9 +6,6 @@ import ckeditor5 from "@ckeditor/vite-plugin-ckeditor5";
 
 export default defineConfig({
   optimizeDeps: {
-    esbuildOptions: {
-      legalComments: "none",
-    },
     entries: "./index.html"
   },
   plugins: [

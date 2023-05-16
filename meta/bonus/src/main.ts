@@ -38,6 +38,7 @@ import { Comments } from "@ckeditor/ckeditor5-comments";
 import {SlashCommand} from "@ckeditor/ckeditor5-slash-command";
 import {Mention} from "@ckeditor/ckeditor5-mention";
 import {JSONData} from "../plugins/jsonData.ts";
+import {DragDropBlockToolbar, DragDropExperimental} from "ckeditor5/src/clipboard.js";
 
 declare global {
   interface Window {
@@ -87,6 +88,8 @@ BalloonEditor.create(editorElement, {
     AutoLink,
     DocumentList,
     BlockToolbar,
+    DragDropExperimental,
+    DragDropBlockToolbar,
     JSONData
   ],
   blockToolbar: {
