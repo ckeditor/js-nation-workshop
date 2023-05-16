@@ -4,6 +4,7 @@
 # ignore on all levels
 node_modules/
 token.ts
+dist/
 
 # ignore project files in the root dir
 /.eslintrc.cjs
