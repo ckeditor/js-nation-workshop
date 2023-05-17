@@ -32,11 +32,6 @@ body {
   display: flex; /* Create a column layout. */
   justify-content: center;
   overflow-y: auto;
-  position: absolute;
-  top: var(--top-height);
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
   padding: 0 20px;
 }
 
