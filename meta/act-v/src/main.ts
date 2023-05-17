@@ -125,7 +125,7 @@ BalloonEditor.create(editorElement, {
   },
   placeholder: "Start writing...",
   collaboration: {
-    channelId: "document-id",
+    channelId: "",
   },
   presenceList: {
     container: document.getElementById("presence-list-container")!,

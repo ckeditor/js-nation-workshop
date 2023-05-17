@@ -1,3 +1,4 @@
+import "./styles.css";
 import { Autoformat } from "@ckeditor/ckeditor5-autoformat";
 import {
   Bold,
@@ -40,7 +41,6 @@ import {
   DragDropBlockToolbar,
   DragDropExperimental,
 } from "ckeditor5/src/clipboard.js";
-import "./styles.css";
 
 declare global {
   interface Window {
@@ -137,7 +137,7 @@ BalloonEditor.create(editorElement, {
   },
   placeholder: "Start writing...",
   collaboration: {
-    channelId: "foo",
+    channelId: "",
   },
   presenceList: {
     container: document.getElementById("presence-list-container")!,
