@@ -12,29 +12,30 @@
     <style></style>
   </head>
   <body>
-    <h1>CKEditor 5 – Development Sample</h1>
-
-    <!-- maybe this will be useful later -->
-    <div id="presence-list-container"></div>
-
-    <div class="container">
-      <!-- editor will be here -->
-      <div id="editor"></div>
-      <!-- maybe this will be useful later -->
-      <div class="sidebar" id="sidebar"></div>
-    </div>
-    <div id="autosave">
-      <div id="autosave-status">
-        <div id="autosave-status_label">Status:</div>
-        <div id="autosave-status_spinner">
-          <span id="autosave-status_spinner-label"></span>
-          <span id="autosave-status_spinner-loader"></span>
+    <div class="top">
+      <div class="ck ck-reset_all" id="autosave">
+        <div id="autosave-status">
+          <div id="autosave-status_spinner">
+            <span id="autosave-status_spinner-label" data-cke-tooltip-text="Document saved" data-cke-tooltip-position="sw">
+              <svg viewBox="0 0 20 20" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M6.972 16.615a.997.997 0 0 1-.744-.292l-4.596-4.596a1 1 0 1 1 1.414-1.414l3.926 3.926 9.937-9.937a1 1 0 0 1 1.414 1.415L7.717 16.323a.997.997 0 0 1-.745.292z"/></svg>
+            </span>
+            <span id="autosave-status_spinner-loader" data-cke-tooltip-text="Saving..." data-cke-tooltip-position="sw"></span>
+          </div>
         </div>
       </div>
+      <!-- maybe this will be useful later -->
+      <div id="presence-list-container"></div>      
     </div>
-
-    <!-- add space for scrolling -->
-    <div style="height: 1000px"></div>
+    <div class="container">
+      <div class="document-container">
+          <h1>CKEditor 5 – Development Sample</h1>
+          <!-- editor will be here -->
+          <div id="editor"></div>
+        </div>
+        <!-- maybe this will be useful later -->
+        <div class="sidebar" id="sidebar"></div>
+      </div>
+    </div>
 
     <script src="https://cdn.ckbox.io/ckbox/latest/ckbox.js"></script>
     <script type="module" src="src/main.ts"></script>

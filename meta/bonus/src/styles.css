@@ -1,38 +1,77 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900);
 
+:root {
+  --ck-font-face: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ck-user-avatar-size: 30px;
+  --ck-spinner-size: 25px;
+  --top-height: 80px;
+}
+
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 50px 100px;
-  max-width: 1000px; /* Set some size for the whole editor + sidebar (can be any size). */
+  font-family: var(--ck-font-face);
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  display: flex;
+  justify-content: flex-end;
+  height: var(--top-height);
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 3px 5px hsl(0deg 0% 0% / 7.06%);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 20px;
 }
 
 .container {
   display: flex; /* Create a column layout. */
-  position: relative;
-  width: 100%;
+  justify-content: center;
+  overflow-y: auto;
+  position: absolute;
+  top: var(--top-height);
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 0 20px;
 }
 
-.container > .ck.ck-editor {
-  width: 100%; /* Stretch the editable area. */
+h1 {
+  margin-top: 100px;
+  font-size: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 #editor {
-  margin: 5em auto !important;
-  width: 100%;
+  padding: 0 0 30px;
+}
+
+#editor.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.document-container {
+  flex-grow: 1;
+  max-width: 800px;
+  margin-left: 35px;
 }
 
 #autosave {
-  position: fixed;
-  bottom: 10px;
-  justify-content: space-between;
+  display: flex;
+  margin-right: 10px;
+  padding-right: 15px;
+  border-right: 1px solid #ddd;
+}
+
+#autosave-status {
+  display: flex;
   align-items: center;
-  padding: 10px;
-  border-radius: var(--ck-border-radius);
-  margin-top: -1.5em;
-  margin-bottom: 1.5em;
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
 #autosave-status_spinner {
@@ -42,42 +81,62 @@ body {
 }
 
 #autosave-status_spinner-label {
-  position: relative;
+  background: green;
+  border-radius: 100px;
+  width: var(--ck-spinner-size);
+  height: var(--ck-spinner-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: fade-out-label;
+  animation-duration: 2s;
+  opacity: .3;
+  filter: grayscale(1);
 }
 
-#autosave-status_spinner-label::after {
-  content: "Saved!";
-  color: green;
-  display: inline-block;
-  margin-right: var(--ck-spacing-medium);
+.top:hover #autosave-status_spinner-label,
+#autosave-status_spinner-label:hover {
+  opacity: 1;
+  filter: grayscale(0);
 }
 
-/* During "Saving" display spinner and change content of label. */
-#autosave-status.busy #autosave-status_spinner-label::after {
-  content: "Saving...";
-  color: red;
+@keyframes fade-out-label {
+  from {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+  80% {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+  to {
+    opacity: .3;
+    filter: grayscale(1);
+  }
+}
+
+#autosave-status_spinner-label svg {
+  width: 15px;
+  height: 15px;
+}
+
+#autosave-status_spinner-label svg * {
+  fill: #fff;
+}
+
+#autosave-status.busy #autosave-status_spinner-label {
+  display: none;
 }
 
 #autosave-status.busy #autosave-status_spinner-loader {
-  display: block;
-  width: 16px;
-  height: 16px;
+  width: var(--ck-spinner-size);
+  height: var(--ck-spinner-size);
   border-radius: 50%;
-  border-top: 3px solid hsl(0, 0%, 70%);
+  border-top: 2px solid hsl(0, 0%, 70%);
   border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
   animation: autosave-status-spinner 1s linear infinite;
-}
-
-#autosave-status,
-#autosave-server {
-  display: flex;
-  align-items: center;
-}
-
-#autosave-server_label,
-#autosave-status_label {
-  font-weight: bold;
-  margin-right: var(--ck-spacing-medium);
+  display: block;
 }
 
 @keyframes autosave-status-spinner {
@@ -91,13 +150,20 @@ body {
   transform: translateX(calc(-1 * var(--ck-spacing-large)));
 }
 
-.sidebar {
-  margin-left: -1px;
-}
-
 #sidebar {
   /* Set some size and spacing for the sidebar (can be any size). */
-  min-width: 200px;
+  min-width: 300px;
   padding: 0 10px;
+  margin-left: 20px;
   overflow: hidden; /* Hide annotations moved above top sidebar border. */
+}
+
+#sidebar:has(.ck-sidebar:empty) {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  #sidebar {
+    display: none;
+  }
 }

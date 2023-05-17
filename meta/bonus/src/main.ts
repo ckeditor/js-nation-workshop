@@ -1,5 +1,3 @@
-import "./styles.css";
-import "./balloon.css";
 import { Autoformat } from "@ckeditor/ckeditor5-autoformat";
 import {
   Bold,
@@ -42,6 +40,7 @@ import {
   DragDropBlockToolbar,
   DragDropExperimental,
 } from "ckeditor5/src/clipboard.js";
+import "./styles.css";
 
 declare global {
   interface Window {
@@ -138,7 +137,7 @@ BalloonEditor.create(editorElement, {
   },
   placeholder: "Start writing...",
   collaboration: {
-    channelId: "document-id",
+    channelId: "foo",
   },
   presenceList: {
     container: document.getElementById("presence-list-container")!,
@@ -146,10 +145,21 @@ BalloonEditor.create(editorElement, {
   sidebar: {
     container: document.getElementById("sidebar")!,
   },
+  ui: {
+    viewportOffset: {
+      top: 80
+    }
+  }
 }).then((editor) => {
   window.editor = editor;
   CKEditorInspector.attach(editor);
   displayStatus(editor);
+
+  editor.ui.view.listenTo( window, 'resize', () => updateSidebarDisplayMode(editor) );
+  editor.ui.on( 'update', () => updateSidebarDisplayMode(editor) );
+
+  updateSidebarDisplayMode(editor);
+  startBlockToolbarScrollUpdater(editor);
 });
 
 function saveData(editor: BalloonEditor) {
@@ -188,4 +198,29 @@ function displayStatus(editor: BalloonEditor) {
       statusIndicator?.classList.remove("busy");
     }
   });
+}
+
+let currentAnnotationsMode: 'inline' | 'wideSidebar';
+
+function updateSidebarDisplayMode( editor: BalloonEditor ) {
+  const annotationsUIs = editor.plugins.get( 'AnnotationsUIs' );
+  let newMode: typeof currentAnnotationsMode;
+
+  if ( document.body.clientWidth < 1250 ) {
+    newMode = 'inline';
+  } else {
+    newMode = 'wideSidebar';
+  }
+
+  if ( currentAnnotationsMode !== newMode ) {
+    currentAnnotationsMode = newMode;
+    annotationsUIs.switchTo( currentAnnotationsMode );
+  }
+}
+
+function startBlockToolbarScrollUpdater(editor: BalloonEditor) {
+  // Make sure the block toolbar button follows the content when the container is scrolled.
+  editor.ui.view.listenTo( document.querySelector( '.container' ) as HTMLElement, 'scroll', () => {
+    editor.ui.update();
+  } );
 }
