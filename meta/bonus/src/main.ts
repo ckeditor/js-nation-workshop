@@ -137,7 +137,7 @@ BalloonEditor.create(editorElement, {
   },
   placeholder: "Start writing...",
   collaboration: {
-    channelId: "",
+    channelId: "1234",
   },
   presenceList: {
     container: document.getElementById("presence-list-container")!,
@@ -147,16 +147,18 @@ BalloonEditor.create(editorElement, {
   },
   ui: {
     viewportOffset: {
-      top: 80
-    }
-  }
+      top: 80,
+    },
+  },
 }).then((editor) => {
   window.editor = editor;
   CKEditorInspector.attach(editor);
   displayStatus(editor);
 
-  editor.ui.view.listenTo( window, 'resize', () => updateSidebarDisplayMode(editor) );
-  editor.ui.on( 'update', () => updateSidebarDisplayMode(editor) );
+  editor.ui.view.listenTo(window, "resize", () =>
+    updateSidebarDisplayMode(editor)
+  );
+  editor.ui.on("update", () => updateSidebarDisplayMode(editor));
 
   updateSidebarDisplayMode(editor);
   startBlockToolbarScrollUpdater(editor);
@@ -200,27 +202,31 @@ function displayStatus(editor: BalloonEditor) {
   });
 }
 
-let currentAnnotationsMode: 'inline' | 'wideSidebar';
+let currentAnnotationsMode: "inline" | "wideSidebar";
 
-function updateSidebarDisplayMode( editor: BalloonEditor ) {
-  const annotationsUIs = editor.plugins.get( 'AnnotationsUIs' );
+function updateSidebarDisplayMode(editor: BalloonEditor) {
+  const annotationsUIs = editor.plugins.get("AnnotationsUIs");
   let newMode: typeof currentAnnotationsMode;
 
-  if ( document.body.clientWidth < 1250 ) {
-    newMode = 'inline';
+  if (document.body.clientWidth < 1250) {
+    newMode = "inline";
   } else {
-    newMode = 'wideSidebar';
+    newMode = "wideSidebar";
   }
 
-  if ( currentAnnotationsMode !== newMode ) {
+  if (currentAnnotationsMode !== newMode) {
     currentAnnotationsMode = newMode;
-    annotationsUIs.switchTo( currentAnnotationsMode );
+    annotationsUIs.switchTo(currentAnnotationsMode);
   }
 }
 
 function startBlockToolbarScrollUpdater(editor: BalloonEditor) {
   // Make sure the block toolbar button follows the content when the container is scrolled.
-  editor.ui.view.listenTo( document.querySelector( '.container' ) as HTMLElement, 'scroll', () => {
-    editor.ui.update();
-  } );
+  editor.ui.view.listenTo(
+    document.querySelector(".container") as HTMLElement,
+    "scroll",
+    () => {
+      editor.ui.update();
+    }
+  );
 }

@@ -1,5 +1,4 @@
 import "./styles.css";
-import "./balloon.css";
 import { Autoformat } from "@ckeditor/ckeditor5-autoformat";
 import {
   Bold,
@@ -104,7 +103,7 @@ BalloonEditor.create(editorElement, {
       "ckbox",
       "|",
       "comment",
-      "commentsArchive"
+      "commentsArchive",
     ],
   },
   link: {
@@ -125,13 +124,18 @@ BalloonEditor.create(editorElement, {
   },
   placeholder: "Start writing...",
   collaboration: {
-    channelId: "",
+    channelId: "1234",
   },
   presenceList: {
     container: document.getElementById("presence-list-container")!,
   },
   sidebar: {
     container: document.getElementById("sidebar")!,
+  },
+  ui: {
+    viewportOffset: {
+      top: 80,
+    },
   },
 }).then((editor) => {
   window.editor = editor;

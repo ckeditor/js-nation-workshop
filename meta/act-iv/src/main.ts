@@ -110,6 +110,11 @@ BalloonEditor.create(editorElement, {
     toolbar: ["toggleImageCaption", "imageTextAlternative"],
   },
   placeholder: "Start writing...",
+  ui: {
+    viewportOffset: {
+      top: 80,
+    },
+  },
 }).then((editor) => {
   window.editor = editor;
   CKEditorInspector.attach(editor);

@@ -1,3 +1,4 @@
+import "./styles.css";
 import { Autoformat } from "@ckeditor/ckeditor5-autoformat";
 import {
   Bold,
