@@ -19,8 +19,7 @@ import CKEditorInspector from "@ckeditor/ckeditor5-inspector";
 import { Table, TableToolbar } from "@ckeditor/ckeditor5-table";
 import {
   Image,
-  ImageCaption,
-  ImageToolbar,
+  ImageResize,
   ImageUpload,
   PictureEditing,
 } from "@ckeditor/ckeditor5-image";
@@ -50,8 +49,7 @@ ClassicEditor.create(editorElement, {
     PictureEditing,
     ImageUpload,
     Image,
-    ImageToolbar,
-    ImageCaption,
+    ImageResize,
     Table,
     TableToolbar,
     Autosave,
@@ -102,9 +100,6 @@ ClassicEditor.create(editorElement, {
   table: {
     defaultHeadings: { rows: 1, columns: 1 },
     contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-  },
-  image: {
-    toolbar: ["toggleImageCaption", "imageTextAlternative"],
   },
 }).then((editor) => {
   window.editor = editor;
