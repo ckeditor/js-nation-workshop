@@ -127,11 +127,6 @@ BalloonEditor.create(editorElement, {
   sidebar: {
     container: document.getElementById("sidebar")!,
   },
-  ui: {
-    viewportOffset: {
-      top: 80,
-    },
-  },
 }).then((editor) => {
   window.editor = editor;
   CKEditorInspector.attach(editor);

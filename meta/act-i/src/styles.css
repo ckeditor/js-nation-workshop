@@ -20,7 +20,7 @@ body {
   align-items: center;
   background: #fff;
   box-shadow: 0 3px 5px hsl(0deg 0% 0% / 7.06%);
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -31,9 +31,9 @@ body {
 .container {
   display: flex; /* Create a column layout. */
   justify-content: center;
-  min-height: 500px;
   overflow-y: auto;
   padding: 0 20px;
+  min-height: 500px;
 }
 
 h1 {
@@ -50,6 +50,11 @@ h1 {
 #editor.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
   border-color: transparent;
   box-shadow: none;
+}
+
+/* Give the block toolbar button some space, moving it a few pixels away from the editable area. */
+.ck.ck-block-toolbar-button {
+  transform: translateX(calc(-1 * var(--ck-spacing-large)));
 }
 
 .document-container {
@@ -86,7 +91,7 @@ h1 {
   align-items: center;
   animation-name: fade-out-label;
   animation-duration: 2s;
-  opacity: .3;
+  opacity: 0.3;
   filter: grayscale(1);
 }
 
@@ -106,7 +111,7 @@ h1 {
     filter: grayscale(0);
   }
   to {
-    opacity: .3;
+    opacity: 0.3;
     filter: grayscale(1);
   }
 }
@@ -141,11 +146,6 @@ h1 {
   }
 }
 
-/* Give the block toolbar button some space, moving it a few pixels away from the editable area. */
-.ck.ck-block-toolbar-button {
-  transform: translateX(calc(-1 * var(--ck-spacing-large)));
-}
-
 #sidebar {
   /* Set some size and spacing for the sidebar (can be any size). */
   min-width: 300px;
@@ -154,12 +154,12 @@ h1 {
   overflow: hidden; /* Hide annotations moved above top sidebar border. */
 }
 
-#sidebar:has(.ck-sidebar:empty) {
-  display: none;
-}
+/* #sidebar:has(.ck-sidebar:empty) { */
+/*   display: none; */
+/* } */
 
-@media (max-width: 1250px) {
-  #sidebar {
-    display: none;
-  }
-}
+/* @media (max-width: 1250px) { */
+/*   #sidebar { */
+/*     display: none; */
+/*   } */
+/* } */
