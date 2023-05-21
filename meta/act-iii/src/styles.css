@@ -44,7 +44,7 @@ h1 {
 }
 
 #editor {
-  padding: 0 0 30px;
+  padding: 0 0 5px 30px;
 }
 
 #editor.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
