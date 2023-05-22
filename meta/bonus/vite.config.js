@@ -8,9 +8,6 @@ export default defineConfig({
   optimizeDeps: {
     entries: "./index.html",
   },
-  define: {
-    global: "window",
-  },
   plugins: [
     ckeditor5({ theme: require.resolve("@ckeditor/ckeditor5-theme-lark") }),
   ],
