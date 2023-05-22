@@ -29,8 +29,7 @@
     "@ckeditor/ckeditor5-slash-command": "38.0.0",
     "@ckeditor/ckeditor5-table": "38.0.0",
     "@ckeditor/ckeditor5-theme-lark": "38.0.0",
-    "@ckeditor/ckeditor5-ui": "38.0.0",
-    "ckeditor5": "38.0.0"
+    "@ckeditor/ckeditor5-ui": "38.0.0"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-inspector": "^4.1.0",

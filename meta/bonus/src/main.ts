@@ -35,7 +35,6 @@ import {
 import { Comments } from "@ckeditor/ckeditor5-comments";
 import { SlashCommand } from "@ckeditor/ckeditor5-slash-command";
 import { Mention } from "@ckeditor/ckeditor5-mention";
-import { JSONData } from "../plugins/jsonData.ts";
 import {
   DragDropBlockToolbar,
   DragDropExperimental,
@@ -89,7 +88,6 @@ BalloonEditor.create(editorElement, {
     BlockToolbar,
     DragDropExperimental,
     DragDropBlockToolbar,
-    JSONData,
   ],
   blockToolbar: {
     items: [
