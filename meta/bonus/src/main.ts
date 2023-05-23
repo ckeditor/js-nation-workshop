@@ -24,7 +24,7 @@ import {
 } from "@ckeditor/ckeditor5-image";
 import { CKBox } from "@ckeditor/ckeditor5-ckbox";
 import { CloudServices } from "@ckeditor/ckeditor5-cloud-services";
-import { licenseKey, tokenUrl, webSocketUrl } from "./token.ts";
+import { licenseKey, tokenUrl, webSocketUrl } from "./add-token.ts";
 import { BalloonEditor } from "@ckeditor/ckeditor5-editor-balloon";
 import { BlockToolbar } from "@ckeditor/ckeditor5-ui";
 import {
